@@ -14,9 +14,10 @@ const PropertyList = () => {
   const dispatch = useDispatch()
 
   //get the property list from server of logged in user
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const getPropertyList = async () => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/${user._id}/properties`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/users/${user._id}/properties`, {
         method: "GET"
       })
       const data = await response.json()
@@ -29,7 +30,7 @@ const PropertyList = () => {
 
   useEffect(() => {
     getPropertyList()
-  })
+  },[getPropertyList])
 
   return loading ? <Loader /> : (
     <>

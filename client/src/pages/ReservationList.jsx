@@ -18,7 +18,7 @@ const ReservationList = () => {
   const getReservationList = async () => {
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_API_URL}/${userId}/reservations`,
+        `${process.env.REACT_APP_API_URL}/users/${userId}/reservations`,
         {
           method: "GET",
         }
