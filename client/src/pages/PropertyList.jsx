@@ -16,7 +16,7 @@ const PropertyList = () => {
   //get the property list from server of logged in user
   const getPropertyList = async () => {
     try {
-      const response = await fetch(`http://localhost:3001/users/${user._id}/properties`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/${user._id}/properties`, {
         method: "GET"
       })
       const data = await response.json()
