@@ -16,6 +16,7 @@ const CategoryPage = () => {
   const listings = useSelector((state) => state.listings);
 
   //get all category listings
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const getFeedListings = async () => {
     try {
       const response = await fetch(
@@ -35,7 +36,7 @@ const CategoryPage = () => {
 
   useEffect(() => {
     getFeedListings();
-  }, [category]);
+  }, [getFeedListings]);
 
   return loading ? (
     <Loader />

@@ -16,6 +16,7 @@ const SearchPage = () => {
   const dispatch = useDispatch()
 
   //search DB for the query
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const getSearchListings = async () => {
     try {
       const response = await fetch(`http://localhost:3001/properties/search/${search}`, {
@@ -32,7 +33,7 @@ const SearchPage = () => {
 
   useEffect(() => {
     getSearchListings()
-  }, [search])
+  }, [getSearchListings])
 
   return loading ? <Loader /> : (
     <>
